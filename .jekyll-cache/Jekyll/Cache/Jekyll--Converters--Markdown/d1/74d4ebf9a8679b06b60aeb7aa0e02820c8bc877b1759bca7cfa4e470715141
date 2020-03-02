@@ -1,0 +1,45 @@
+I"<ul id="markdown-toc">
+  <li><a href="#关于我" id="markdown-toc-关于我">关于我</a></li>
+  <li><a href="#联系我" id="markdown-toc-联系我">联系我</a></li>
+  <li><a href="#comments" id="markdown-toc-comments">Comments</a></li>
+</ul>
+
+<h2 id="关于我">关于我</h2>
+
+<p>*东北大学NLP</p>
+
+<p>*研究领域：自然语言处理</p>
+
+<p>*研究方向：机器阅读理解</p>
+
+<h2 id="联系我">联系我</h2>
+
+<ul>
+  <li>GitHub：<a href="https://github.com/Misoknisky">Misoknisky</a></li>
+  <li>email：misoknisky@163.com</li>
+  <li>qq: 1113471782@qq.com</li>
+  <li><a href="https://weibo.com/u/5513447608">Weibo</a></li>
+  <li><a href="https://www.zhihu.com/people/kangkangliu/">知乎</a></li>
+</ul>
+
+<h2 id="comments">Comments</h2>
+
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css" />
+
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+
+<script>
+    var gitment = new Gitment({
+		id: '<%= page.date %>',
+        owner: 'Misoknisky',
+        repo: 'Misoknisky.github.io',
+        oauth: {
+            client_id: '6960975f7ee1b52c7564',
+            client_secret: '728532421ca82bd6177f2d648de50479d827b3af',
+        },
+    });
+    gitment.render('gitmentContainer')
+</script>
+
+:ET

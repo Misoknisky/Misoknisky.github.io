@@ -1,0 +1,194 @@
+I"7M<ul id="markdown-toc">
+  <li><a href="#latex" id="markdown-toc-latex">Latex</a>    <ul>
+      <li><a href="#latex-demo" id="markdown-toc-latex-demo">latex Demo</a></li>
+      <li><a href="#概念介绍" id="markdown-toc-概念介绍">概念介绍</a></li>
+      <li><a href="#文档组织" id="markdown-toc-文档组织">文档组织</a></li>
+      <li><a href="#数学公式" id="markdown-toc-数学公式">数学公式</a></li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <h2 id="latex">Latex</h2>
+  <blockquote>
+    <h3 id="latex-demo">latex Demo</h3>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[UTF8]</span><span class="p">{</span>article<span class="p">}</span>
+<span class="k">\usepackage</span><span class="na">[UTF8]</span><span class="p">{</span>ctex<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+Hello, world,你好
+<span class="nt">\end{document}</span>
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <h3 id="概念介绍">概念介绍</h3>
+    <blockquote>
+      <ol>
+        <li>控制序列：是以反斜杠 \ 开头，以第一个空格或非字母 的字符结束的一串文字，比如\documentclass,它后面紧跟着的 {article} 代表这个控制序列有一个必要的参数,部分控制序列还有[]的可选参数</li>
+        <li>latex对控制序列大小写是敏感的</li>
+        <li>注释：”“后内容表示注释</li>
+        <li>\documentclass{.}\begin[.}之间是导言区，导言区出现的控制序列，往往会影响整篇文档的格式。我们通常在导言区设置页面大小、页眉页脚样式、章节标题样式等等
+Demo解析</li>
+        <li>\documentclass 是一个控制序列，{}是必选参数，决定了文档类型，除了article类之外，还有其他的文档类型，[]表示可选参数， UTF8表示编码格式</li>
+        <li>\bigin{} \end{}控制序列成对出现，这两个控制序列之间的内容被称为环境，环境属性有参数决定，以上为document属性环境，只有出现在\bigin{.} \end{.} .环境内的内容才会被显示</li>
+        <li>\usepackage 控制序列实现对三方宏包的加载，ctex宏包内部实现了对中文排版的支持，通过\usepackage[UTF8]{ctex}实现中英混排</li>
+      </ol>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>Latex组织文档</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="p">{</span>article<span class="p">}</span>
+加入标题、作者、日期:
+<span class="k">\title</span><span class="p">{</span>demo<span class="p">}</span>
+<span class="k">\author</span><span class="p">{</span>admin<span class="p">}</span>
+<span class="k">\date</span><span class="p">{</span>today<span class="p">}</span>
+加载ctex宏包
+<span class="k">\usepackage</span><span class="na">[UTF8]</span><span class="p">{</span>ctex<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+生成目录
+<span class="k">\tableofcontents</span>
+使标题等有效显示
+<span class="k">\maketitle</span>
+<span class="k">\section</span><span class="p">{</span>河南省<span class="p">}</span>
+河南省是。。。
+<span class="k">\subsection</span><span class="p">{</span>漯河市<span class="p">}</span>
+漯河市是...
+<span class="k">\subsubsection</span><span class="p">{</span>舞阳县<span class="p">}</span>
+舞阳县是漯河市的。。。。
+<span class="k">\paragraph</span><span class="p">{</span>章华乡<span class="p">}</span>
+章华乡是舞阳县的一个。。。
+<span class="k">\subparagraph</span><span class="p">{</span>绳刘村<span class="p">}</span>
+绳刘村是....
+<span class="nt">\end{document}</span>
+文档结构：在文档类 article/ctexart 中，定义了五个控制序列来调整行文组织结构。他们分别是
+<span class="k">\section</span><span class="p">{</span>·<span class="p">}</span>
+<span class="k">\subsection</span><span class="p">{</span>·<span class="p">}</span>
+<span class="k">\subsubsection</span><span class="p">{</span>·<span class="p">}</span>
+<span class="k">\paragraph</span><span class="p">{</span>·<span class="p">}</span>
+<span class="k">\subparagraph</span><span class="p">{</span>·<span class="p">}</span>
+在report/ctexrep中，还有<span class="k">\chapter</span><span class="p">{</span>·<span class="p">}</span>；在文档类book/ctexbook中，还定义了<span class="k">\part</span><span class="p">{</span>·<span class="p">}</span>。
+生成目录：在<span class="k">\maketitle</span>控制序列之前加入<span class="k">\tableofcontents</span>和之后加入效果是不一样的，尝试就可以看出效果
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <h3 id="文档组织">文档组织</h3>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[UTF8]</span><span class="p">{</span>article<span class="p">}</span>
+<span class="k">\usepackage</span><span class="na">[UTF8]</span><span class="p">{</span>ctex<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>amsmath<span class="p">}</span>
+<span class="k">\title</span><span class="p">{</span>demo<span class="p">}</span>
+<span class="k">\author</span><span class="p">{</span>admin<span class="p">}</span>
+<span class="k">\date</span><span class="p">{</span>today<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+<span class="k">\tableofcontents</span>
+<span class="k">\maketitle</span>
+第一章
+<span class="k">\section</span><span class="p">{</span>人工神经网络<span class="p">}</span>
+行内公式:<span class="p">$</span><span class="nb">E</span><span class="o">=</span><span class="nb">mc</span><span class="p">^</span><span class="m">2</span><span class="p">$</span>.
+行间公式:<span class="p">\[</span><span class="nb">E</span><span class="o">=</span><span class="nb">mc</span><span class="p">^</span><span class="m">2</span><span class="nb">.</span><span class="p">\]</span>
+对公示编号:
+<span class="nt">\begin{equation}</span>
+c=a<span class="p">^</span>2 + b<span class="p">^</span>2.
+<span class="nt">\end{equation}</span>
+<span class="nt">\begin{equation}</span>
+label=log<span class="p">_</span>210x.
+<span class="nt">\end{equation}</span>
+<span class="nt">\begin{equation}</span>
+z = r<span class="k">\cdot</span> e<span class="p">^{</span>2<span class="k">\pi</span> i<span class="p">}</span>.
+<span class="nt">\end{equation}</span>
+<span class="k">\subsection</span><span class="p">{</span>神经元<span class="p">}</span>
+<span class="k">\subsection</span><span class="p">{</span>感知机<span class="p">}</span>
+<span class="k">\subsection</span><span class="p">{</span>多层感知机<span class="p">}</span>
+ 第二章
+<span class="k">\section</span><span class="p">{</span>卷积神经网络<span class="p">}</span>
+<span class="k">\subsection</span><span class="p">{</span>普通卷积<span class="p">}</span>
+<span class="k">\subsubsection</span><span class="p">{</span>卷积的特点与过程<span class="p">}</span>
+<span class="k">\subsubsection</span><span class="p">{</span>卷积核的作用<span class="p">}</span>
+<span class="k">\subsection</span><span class="p">{</span>深度可分离卷积<span class="p">}</span>
+<span class="k">\subsubsection</span><span class="p">{</span>深度可分离卷积原理<span class="p">}</span>
+第三章
+<span class="k">\section</span><span class="p">{</span>循环神经网络<span class="p">}</span>
+第四章
+<span class="k">\section</span><span class="p">{</span>Transformer<span class="p">}</span>
+<span class="nt">\end{document}</span>
+latex公式，分为行内公式和行间公式，行内公式"<span class="p">$</span><span class="nb">...</span><span class="p">$</span>",行间公式"<span class="p">\[</span><span class="nb">...</span><span class="p">\]</span>"，如果需要对公式编号,可以使用equation环境
+<span class="nt">\begin{equation}</span>
+<span class="nt">\end{equation}</span>
+行内公式和行间公式对标点符号的要求不一样的，行内公式的标点符号应该放在数学模式的限定符之外，行间公式应当放在数学模式的限定符之内
+数学模式的上标使用<span class="p">^</span>实现，下标使用<span class="p">_</span>实现，默认情况下只对后边的一个字符起作用，如果上下标识多个字符需要使用<span class="p">{}</span>括起来，
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <h3 id="数学公式">数学公式</h3>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[UTF8]</span><span class="p">{</span>article<span class="p">}</span>
+<span class="k">\usepackage</span><span class="na">[UTF8]</span><span class="p">{</span>ctex<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>amsmath<span class="p">}</span>
+<span class="k">\title</span><span class="p">{</span>Demo<span class="p">}</span>
+<span class="k">\author</span><span class="p">{</span>Admin<span class="p">}</span>
+<span class="k">\date</span><span class="p">{</span>2019-12-24<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+<span class="k">\tableofcontents</span>
+<span class="k">\maketitle</span>
+<span class="k">\section</span><span class="p">{</span>公式编辑<span class="p">}</span>
+<span class="k">\subsection</span><span class="p">{</span>根号<span class="p">}</span>
+<span class="p">$</span><span class="nv">\sqrt</span><span class="p">{</span><span class="nb">a</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> b</span><span class="p">^</span><span class="m">2</span><span class="p">}$</span>
+<span class="p">\[</span><span class="nb"> </span><span class="nv">\sqrt</span><span class="p">{</span><span class="m">4</span><span class="o">*</span><span class="m">4</span><span class="p">}</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">4</span><span class="p">\]</span>
+<span class="nt">\begin{equation}</span>
+<span class="k">\sqrt</span><span class="p">{</span>a<span class="p">^</span>2 + b<span class="p">^</span>2<span class="p">}</span> = c
+<span class="nt">\end{equation}</span>
+<span class="k">\subsection</span><span class="p">{</span>分式<span class="p">}</span>
+<span class="p">$</span><span class="nv">\frac</span><span class="p">{</span><span class="m">4</span><span class="p">}{</span><span class="m">5</span><span class="p">}$</span>
+<span class="p">\[</span><span class="nb"> </span><span class="nv">\frac</span><span class="p">{</span><span class="nb"> </span><span class="nv">\sqrt</span><span class="p">{</span><span class="nb">a</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> b</span><span class="p">^</span><span class="m">2</span><span class="p">}}{</span><span class="nb">x </span><span class="o">+</span><span class="nb"> y</span><span class="p">}\]</span>
+<span class="nt">\begin{equation}</span>
+<span class="k">\frac</span><span class="p">{</span><span class="k">\sqrt</span><span class="p">{</span><span class="k">\sqrt</span><span class="p">{</span>a<span class="p">^</span>2 + b<span class="p">^</span>2<span class="p">}}}{</span>10<span class="p">}</span>
+<span class="nt">\end{equation}</span>
+<span class="k">\subsection</span><span class="p">{</span>运算符<span class="p">}</span>
+<span class="p">\[</span><span class="nb"> </span><span class="nv">\pm\;</span><span class="nb"> </span><span class="nv">\times</span><span class="nb"> </span><span class="nv">\;</span><span class="nb"> </span><span class="nv">\div\;</span><span class="nb"> </span><span class="nv">\cdot\;</span><span class="nb"> </span><span class="nv">\cap\;</span><span class="nb"> </span><span class="nv">\cup\;</span><span class="nb">
+</span><span class="nv">\geq\;</span><span class="nb"> </span><span class="nv">\leq\;</span><span class="nb"> </span><span class="nv">\neq\;</span><span class="nb"> </span><span class="nv">\approx</span><span class="nb"> </span><span class="nv">\;</span><span class="nb"> </span><span class="nv">\equiv</span><span class="nb"> </span><span class="p">\]</span>
+<span class="k">\subsection</span><span class="p">{</span>大型运算符<span class="p">}</span>
+<span class="p">\[</span><span class="nb"> </span><span class="nv">\sum</span><span class="p">_{</span><span class="nb">i</span><span class="o">=</span><span class="m">1</span><span class="p">}^{</span><span class="nb">i</span><span class="o">=</span><span class="nb">n</span><span class="p">}</span><span class="nb"> a</span><span class="p">_</span><span class="nb">i</span><span class="o">=</span><span class="nb"> </span><span class="m">1</span><span class="nb"> </span><span class="p">\]</span>
+<span class="p">\[</span><span class="nb"> </span><span class="nv">\prod</span><span class="p">_{</span><span class="nb">i</span><span class="o">=</span><span class="m">1</span><span class="p">}^{</span><span class="nb">i</span><span class="o">=</span><span class="m">10</span><span class="p">}</span><span class="nb"> b</span><span class="p">_</span><span class="nb">i </span><span class="o">=</span><span class="nb"> </span><span class="m">1</span><span class="nb"> </span><span class="p">\]</span>
+<span class="p">\[</span><span class="nb"> </span><span class="nv">\lim</span><span class="p">_{</span><span class="nb">x </span><span class="nv">\to</span><span class="nb"> </span><span class="m">0</span><span class="p">}</span><span class="nb">f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">1</span><span class="nb"> </span><span class="p">\]</span>
+<span class="p">\[</span><span class="nb"> </span><span class="nv">\int</span><span class="p">_{</span><span class="nb">x</span><span class="p">}^{</span><span class="m">20</span><span class="p">}</span><span class="nb">f</span><span class="o">(</span><span class="nb">x</span><span class="o">)=</span><span class="m">1</span><span class="nb"> </span><span class="p">\]</span>
+<span class="k">\subsection</span><span class="p">{</span>defaulth行内显示<span class="p">}</span>
+<span class="p">$</span><span class="nb"> </span><span class="nv">\sum</span><span class="p">_{</span><span class="nb">i</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="nb">n i</span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\prod</span><span class="p">_{</span><span class="nb">i</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="nb">n </span><span class="p">$</span>
+<span class="k">\subsection</span><span class="p">{</span>limits行内<span class="p">}</span>
+<span class="p">$</span><span class="nb"> </span><span class="nv">\sum\limits</span><span class="nb"> </span><span class="p">_{</span><span class="nb">i</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="nb">n i </span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\prod\limits</span><span class="nb"> </span><span class="p">_{</span><span class="nb">i</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="nb">n </span><span class="p">$</span>
+<span class="k">\subsection</span><span class="p">{</span>default行间显示<span class="p">}</span>
+<span class="p">\[</span><span class="nb"> </span><span class="nv">\lim</span><span class="p">_{</span><span class="nb">x</span><span class="nv">\to</span><span class="m">0</span><span class="p">}</span><span class="nb">x</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\int</span><span class="p">_</span><span class="nb">a</span><span class="p">^</span><span class="nb">b x</span><span class="p">^</span><span class="m">2</span><span class="nb"> dx </span><span class="p">\]</span>
+<span class="k">\subsection</span><span class="p">{</span>nolimits<span class="p">}</span>
+<span class="p">\[</span><span class="nb"> </span><span class="nv">\lim\nolimits</span><span class="nb"> </span><span class="p">_{</span><span class="nb">x</span><span class="nv">\to</span><span class="m">0</span><span class="p">}</span><span class="nb">x</span><span class="p">^</span><span class="m">2</span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\int\nolimits</span><span class="p">_</span><span class="nb">a</span><span class="p">^</span><span class="nb">b x</span><span class="p">^</span><span class="m">2</span><span class="nb"> dx </span><span class="p">\]</span>
+<span class="k">\subsection</span><span class="p">{</span>多重积分<span class="p">}</span>
+<span class="c">%二重、三重、四重、 n重积分</span>
+<span class="p">\[</span><span class="nb"> </span><span class="nv">\iint</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\iiint</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\iiiint</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\idotsint</span><span class="nb"> </span><span class="p">\]</span>
+<span class="k">\subsection</span><span class="p">{</span>定界符<span class="p">}</span>
+<span class="k">\{\}</span> <span class="k">\quad</span> [] 
+<span class="p">\[</span><span class="nb"> </span><span class="nv">\langle\langle</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\lvert</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\rvert\;\lVert</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\rVert</span><span class="nb"> </span><span class="p">\]</span>
+<span class="k">\subsection</span><span class="p">{</span>调整定界符大小<span class="p">}</span>
+<span class="p">$</span><span class="nv">\big</span><span class="o">(</span><span class="nv">\big</span><span class="o">(</span><span class="nv">\big</span><span class="o">(</span><span class="p">$</span>
+<span class="p">\[</span><span class="nb"> </span><span class="nv">\bigl</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="p">\]</span>
+<span class="nt">\end{document}</span>
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<p><script type="math/tex">\sqrt{a^2 + b^2} \quad \frac{4}{5} \quad \sqrt{4*4} = 4</script>
+<script type="math/tex">\sqrt{a^2 + b^2} = c \quad  \frac{ \sqrt{a^2 + b^2}}{x + y}</script>
+<script type="math/tex">\frac{\sqrt{\sqrt{a^2 + b^2}}}{10}</script>
+<script type="math/tex">\pm\; \times \; \div\; \cdot\; \cap\; \cup\;
+\geq\; \leq\; \neq\; \approx \; \equiv</script>
+<script type="math/tex">\sum_{i=1}^{i=n} a_i= 1 \quad  \prod_{i=1}^{i=10} b_i = 1</script>
+<script type="math/tex">\lim_{x \to 0}f(x) = 1 \quad \int_{x}^{20}f(x) dx=1</script>
+<script type="math/tex">\lim\nolimits _{x\to0}x^2\quad \int\nolimits_a^b x^2 dx</script>
+<script type="math/tex">\iint \quad \iiint \quad \iiiint \quad \idotsint</script></p>
+:ET

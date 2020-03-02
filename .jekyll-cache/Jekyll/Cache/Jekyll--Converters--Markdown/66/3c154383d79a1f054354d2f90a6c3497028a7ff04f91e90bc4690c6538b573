@@ -1,0 +1,134 @@
+I"W+<ul id="markdown-toc">
+  <li><a href="#矩阵" id="markdown-toc-矩阵">矩阵</a></li>
+  <li><a href="#图片和表格" id="markdown-toc-图片和表格">图片和表格</a></li>
+  <li><a href="#版式设置" id="markdown-toc-版式设置">版式设置</a></li>
+</ul>
+
+<h3 id="矩阵">矩阵</h3>
+<p>amsmath 的 pmatrix, bmatrix, Bmatrix, vmatrix, Vmatrix 等环境可以在矩阵两边加上各种分隔符。具体效果已运行结果为准</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="na">[UTF8,11pt,a4paper,twoside]</span><span class="p">{</span>article<span class="p">}</span>
+<span class="k">\usepackage</span><span class="na">[UTF8]</span><span class="p">{</span>ctex<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>amsmath<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>graphics<span class="p">}</span>
+<span class="k">\title</span><span class="p">{</span>Matrix<span class="p">}</span>
+<span class="k">\author</span><span class="p">{</span>Admin<span class="p">}</span>
+<span class="k">\date</span><span class="p">{</span>Today<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+<span class="k">\tableofcontents</span>
+<span class="k">\maketitle</span>
+
+<span class="k">\section</span><span class="p">{</span>Matrix<span class="p">}</span>
+<span class="p">\[</span><span class="nb"> 
+</span><span class="nv">\begin</span><span class="p">{</span><span class="nb">pmatrix</span><span class="p">}</span><span class="nb">
+a</span><span class="p">&amp;</span><span class="nb">b</span><span class="p">&amp;</span><span class="nb">c </span><span class="nv">\\</span><span class="nb"> </span><span class="m">123</span><span class="p">&amp;</span><span class="m">234</span><span class="p">&amp;</span><span class="m">34</span><span class="nb">
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">pmatrix</span><span class="p">}^</span><span class="nb">T </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nv">\begin</span><span class="p">{</span><span class="nb">bmatrix</span><span class="p">}</span><span class="nb">
+a</span><span class="p">&amp;</span><span class="nb">b</span><span class="p">&amp;</span><span class="nb">c </span><span class="nv">\\</span><span class="nb"> </span><span class="m">123</span><span class="p">&amp;</span><span class="m">234</span><span class="p">&amp;</span><span class="m">34</span><span class="nb">
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">bmatrix</span><span class="p">}</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nv">\begin</span><span class="p">{</span><span class="nb">Bmatrix</span><span class="p">}</span><span class="nb">
+a</span><span class="p">&amp;</span><span class="nb">b</span><span class="p">&amp;</span><span class="nb">c </span><span class="nv">\\</span><span class="nb"> </span><span class="m">123</span><span class="p">&amp;</span><span class="m">234</span><span class="p">&amp;</span><span class="m">34</span><span class="nb">
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">Bmatrix</span><span class="p">}</span><span class="nb">
+</span><span class="nv">\begin</span><span class="p">{</span><span class="nb">vmatrix</span><span class="p">}</span><span class="nb">
+a</span><span class="p">&amp;</span><span class="nb">b</span><span class="p">&amp;</span><span class="nb">c </span><span class="nv">\\</span><span class="nb"> </span><span class="m">123</span><span class="p">&amp;</span><span class="m">234</span><span class="p">&amp;</span><span class="m">34</span><span class="nb">
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">vmatrix</span><span class="p">}</span><span class="nb">
+</span><span class="nv">\begin</span><span class="p">{</span><span class="nb">Vmatrix</span><span class="p">}</span><span class="nb">
+a</span><span class="p">&amp;</span><span class="nb">b</span><span class="p">&amp;</span><span class="nb">c </span><span class="nv">\\</span><span class="nb"> </span><span class="m">123</span><span class="p">&amp;</span><span class="m">234</span><span class="p">&amp;</span><span class="m">34</span><span class="nb">
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">Vmatrix</span><span class="p">}</span><span class="nb">
+</span><span class="p">\]</span>
+<span class="p">$</span><span class="o">(</span><span class="nb"> </span><span class="nv">\begin</span><span class="p">{</span><span class="nb">smallmatrix</span><span class="p">}</span><span class="nb">
+a</span><span class="p">&amp;</span><span class="nb">b </span><span class="nv">\\</span><span class="nb"> c</span><span class="p">&amp;</span><span class="nb">b
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">smallmatrix</span><span class="p">}</span><span class="nb"> </span><span class="o">)</span><span class="p">$</span>
+<span class="nt">\begin{multline}</span>
+<span class="k">\sum</span><span class="p">_{</span>i=1<span class="p">}^{</span>i=n<span class="p">}</span> a<span class="p">_</span>i= 1 <span class="k">\\</span>
+a= b +c <span class="k">\\</span>
+c=a<span class="p">^</span>2 + b<span class="p">^</span>2 
+<span class="nt">\end{multline}</span>
+<span class="nt">\begin{multline*}</span>
+<span class="k">\sum</span><span class="p">_{</span>i=1<span class="p">}^{</span>i=n<span class="p">}</span> a<span class="p">_</span>i= 1 <span class="k">\\</span>
+a= b +c <span class="k">\\</span>
+c=a<span class="p">^</span>2 + b<span class="p">^</span>2 
+<span class="nt">\end{multline*}</span>
+<span class="p">\[</span><span class="nb"> </span><span class="nv">\begin</span><span class="p">{</span><span class="nb">aligned</span><span class="p">}</span><span class="nb">
+x </span><span class="o">=</span><span class="p">{}&amp;</span><span class="nb"> a</span><span class="o">+</span><span class="nb">b</span><span class="o">+</span><span class="nb">c</span><span class="o">+</span><span class="p">{}</span><span class="nb"> </span><span class="nv">\\</span><span class="nb">
+</span><span class="p">&amp;</span><span class="nb">d</span><span class="o">+</span><span class="nb">e</span><span class="o">+</span><span class="nb">f</span><span class="o">+</span><span class="nb">g 
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">aligned</span><span class="p">}</span><span class="nb"> </span><span class="p">\]</span>
+<span class="nt">\begin{gather}</span>
+x=a+b+c <span class="k">\\</span>
+c=1+x+y <span class="k">\\</span>
+y=A<span class="p">^</span>T + B<span class="p">_</span>2
+<span class="nt">\end{gather}</span>
+<span class="nt">\begin{gather*}</span>
+x=a+b+c <span class="k">\\</span>
+c=1+x+y <span class="k">\\</span>
+y=A<span class="p">^</span>T + B<span class="p">_</span>2
+<span class="nt">\end{gather*}</span>
+<span class="p">\[</span><span class="nb">
+y</span><span class="o">=</span><span class="nb"> </span><span class="nv">\begin</span><span class="p">{</span><span class="nb">cases</span><span class="p">}</span><span class="nb">
+</span><span class="o">-</span><span class="nb">x,x </span><span class="nv">\leq</span><span class="nb"> </span><span class="m">0</span><span class="nb"> </span><span class="nv">\\</span><span class="nb">
+x,x&gt;</span><span class="m">0</span><span class="nb">
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">cases</span><span class="p">}</span><span class="nb">
+</span><span class="p">\]</span>
+<span class="nt">\end{document}</span>
+</code></pre></div></div>
+<h3 id="图片和表格">图片和表格</h3>
+<p>tabular 环境提供了最简单的表格功能。它用 \hline 命令表示横线，在列格式中用 | 表示竖线；用 &amp; 来分列，用 \ 来换行；每列可以采用居左、居中、居右等横向对齐方式，分别用 l、c、r 来表示。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">\documentclass</span><span class="p">{</span>article<span class="p">}</span>
+<span class="k">\usepackage</span><span class="na">[UTF8]</span><span class="p">{</span>ctex<span class="p">}</span>
+<span class="k">\usepackage</span><span class="p">{</span>graphicx<span class="p">}</span>
+<span class="nt">\begin{document}</span>
+<span class="c">%插图</span>
+<span class="k">\includegraphics</span><span class="na">[width=0.8\textwidth]</span><span class="p">{</span>cat.jpg<span class="p">}</span>
+<span class="c">%表格</span>
+<span class="c">%tabular 环境提供了最简单的表格功能。它用 \hline 命令表示横线，在列格式中用 | 表示竖线；</span>
+<span class="c">%用 &amp; 来分列，用 \\ 来换行；每列可以采用居左、居中、居右等横向对齐方式，分别用 l、c、r 来表示。</span>
+<span class="nt">\begin{tabular}</span>
+ <span class="k">\hline</span>
+操作系统<span class="p">&amp;</span> 计算机网络<span class="p">&amp;</span> 信息安全 <span class="k">\\</span>
+ <span class="k">\hline</span>
+语文<span class="p">&amp;</span> 数学<span class="p">&amp;</span>  物理 <span class="k">\\</span>
+ <span class="k">\hline</span>
+<span class="nt">\end{tabular}</span>
+<span class="nt">\end{document}</span>
+</code></pre></div></div>
+
+<h3 id="版式设置">版式设置</h3>
+<p>包括页面大小，页边距，页眉、页脚、缩进、行间距、段间距等</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass{article}
+\usepackage{graphicx}
+%页边距设置
+%geometry包设置页边距
+\usepackage{geometry}
+%页面宽度20cm*15,左边距1cm,右边距2cm，顶部边距3cm，底部边距4cm
+\geometry{papersize={20cm,15cm}}
+\geometry{left=1cm,right=2cm,top=3cm,bottom=4cm}
+%页眉页脚:fancyhdr 宏包
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\author}
+\rhead{\date}
+\chead{shfdisfhs}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headwidth}{\textwidth}
+\renewcommand{\footrulewidth}{0pt}
+\begin{document}
+%浮动体,插图和表格通常需要占据大块空间，所以在文字处理软件中我们经常需要调整他们的位置。
+%figure 和 table 环境可以自动完成这样的任务；这种自动调整位置的环境称作浮动体(float)。
+%htbp 选项用来指定插图的理想位置，这几个字母分别代表 here, top, bottom, float page，
+%也就是就这里、页顶、页尾、浮动页（专门放浮动体的单独页面或分栏）。\centering 用来使插图居中；
+%\caption 命令设置插图标题，LaTeX 会自动给浮动体的标题加上编号。
+%注意 \label 应该放在标题命令之后。
+\begin{figure}[htbp]
+\centering
+\includegraphics{cat.jpg}
+\caption{picture}
+\label{fig:figure1}
+\end{figure}
+\end{document}
+
+</code></pre></div></div>
+:ET
