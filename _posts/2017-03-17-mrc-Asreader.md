@@ -21,7 +21,8 @@ author: admin
 > 1. The thesis compute a vector embedding of each individual word in the context of the whole document,and compute a vector embedding of the query.  
 > 2. Using Bi-GRU as encoder function.The first encoder encodes every word from the document d in the context of the whole document.The second encoder functon  translates the query q into the fixed length representation of the same dimensionality as evary word in the context.  
 > 3. Using a dot product between the question embedding and the contextual embedding of each occurrence of a candidate answer in the document.  
-> 4. The probability that the word w in the context of the whole document is a correct answer as :$P(w|q,d)=\sum_{i \in I(w,d)}s_i$,$s_i=exp(d_i * q)$.  
+
+4. The probability that the word w in the context of the whole document is a correct answer as: $ p(w \mid q,d) =\sum_{i \in I(w,d)}s_i $, $ s_i=exp(d_i * q) $. 
 
 ### 链接
 [论文](https://www.aclweb.org/anthology/P16-1086.pdf)  
