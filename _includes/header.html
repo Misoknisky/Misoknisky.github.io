@@ -1,16 +1,4 @@
 <header id="top">
-  {% if site.baidu-analysis %}
-    <script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "https://hm.baidu.com/hm.js?{{ site.baidu-analyisis }}";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-</script>
-
-{% endif %}
     <div class="wrapper">
         <a href="{{ site.baseurl }}/" class="brand">{{ site.title }}</a>
         <small>{{site.brief-intro}}</small>
@@ -45,16 +33,4 @@
     </div>
 	<link rel="dns-prefetch" href="//cdn.bootcss.com" />
 	<link rel="dns-prefetch" href="//cdn.mathjax.org" />
-	<script type="text/x-mathjax-config">
-			MathJax.Hub.Config({
-			tex2jax: {
-				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-				displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
-				ignoreClass:"class1"
-			}
-		});
-		MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-</script>
-	<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </header>
