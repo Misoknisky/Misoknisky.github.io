@@ -1,4 +1,16 @@
 <header id="top">
+  {% if site.baidu-analysis %}
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?{{ site.baidu-analyisis }}";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+{% endif %}
     <div class="wrapper">
         <a href="{{ site.baseurl }}/" class="brand">{{ site.title }}</a>
         <small>{{site.brief-intro}}</small>
@@ -33,4 +45,5 @@
     </div>
 	<link rel="dns-prefetch" href="//cdn.bootcss.com" />
 	<link rel="dns-prefetch" href="//cdn.mathjax.org" />
+	
 </header>
