@@ -1,8 +1,10 @@
+---
 layout: post
 title:  "accumulate grads"
 categories: grads gpus
 tags: grads tensorflow
 author: admin
+---
 
 * content
 {:toc}
