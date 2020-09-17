@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Stanford Attentive Reader"
-categories: MRC
-tags: NLP MRC  完形填空
+categories: MRC Cloze-style
+tags: NLP MRC  Cloze-style
 author: admin
 ---
 * content

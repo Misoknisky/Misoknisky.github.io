@@ -19,9 +19,10 @@ type: page
 	<tr>
 		<td>东北大学</td>
 		<td>自然语言处理、机器阅读理解</td>
-		<td>1113471782@qq.com</td>
+		<td>misonsky@163.com</td>
 	</tr>
 </table>
+
 
 ### Gitdub 仓库信息（公有仓库，收集整理）
 <table>
