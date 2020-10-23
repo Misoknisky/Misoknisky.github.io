@@ -1,4 +1,4 @@
-I"S <ul id="markdown-toc">
+I"� <ul id="markdown-toc">
   <li><a href="#前言" id="markdown-toc-前言">前言</a></li>
   <li><a href="#mrc" id="markdown-toc-mrc">MRC</a>    <ul>
       <li><a href="#coqa会话阅读理解" id="markdown-toc-coqa会话阅读理解">CoQA会话阅读理解</a></li>
@@ -67,7 +67,7 @@
 <h3 id="数据集下载">数据集下载</h3>
 <blockquote>
   <h4 id="download-glove">Download GloVe</h4>
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir wordvecs
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir wordvecs
 wget -P wordvecs http://nlp.stanford.edu/data/wordvecs/glove.42B.300d.zip
 unzip -d wordvecs wordvecs/glove.42B.300d.zip
 wget -P wordvecs http://nlp.stanford.edu/data/wordvecs/glove.840B.300d.zip
@@ -75,37 +75,37 @@ wget -P wordvecs http://nlp.stanford.edu/data/wordvecs/glove.840B.300d.zip
 unzip -d wordvecs wordvecs/glove.840B.300d.zip ```
 </code></pre></div>  </div>
   <h4 id="download-coqa-data">Download COQA Data</h4>
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir data
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir data
 wget -P data https://nlp.stanford.edu/data/coqa/coqa-train-v1.0.json
 wget -P data https://nlp.stanford.edu/data/coqa/coqa-dev-v1.0.json
 </code></pre></div>  </div>
   <h4 id="download-hotpot-data">Download Hotpot Data</h4>
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget http://curtis.ml.cmu.edu/datasets/hotpot/hotpot_dev_distractor_v1.json
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget http://curtis.ml.cmu.edu/datasets/hotpot/hotpot_dev_distractor_v1.json
 wget http://curtis.ml.cmu.edu/datasets/hotpot/hotpot_dev_fullwiki_v1.json
 wget http://curtis.ml.cmu.edu/datasets/hotpot/hotpot_train_v1.1.json
 </code></pre></div>  </div>
   <h4 id="download-squad-data">Download Squad Data</h4>
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir data
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir data
 wget https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json
 wget https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v1.1.json
 wget https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v2.0.json
 wget https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v2.0.json
 </code></pre></div>  </div>
   <h4 id="download-download-triviaqa">Download Download TriviaQa</h4>
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget http://nlp.cs.washington.edu/triviaqa/data/triviaqa-rc.tar.gz
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget http://nlp.cs.washington.edu/triviaqa/data/triviaqa-rc.tar.gz
 wget http://nlp.cs.washington.edu/triviaqa/data/triviaqa-unfiltered.tar.gz
 </code></pre></div>  </div>
   <h4 id="download-ms-marco">Download MS MARCO</h4>
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>进入页面下载　http://www.msmarco.org/dataset.aspx
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>进入页面下载　http://www.msmarco.org/dataset.aspx
 </code></pre></div>  </div>
   <h4 id="download-dureader">Download DuReader</h4>
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>进入页面下载 http://ai.baidu.com/broad/download
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>进入页面下载 http://ai.baidu.com/broad/download
 </code></pre></div>  </div>
   <h4 id="download-natural-questions">Download Natural Questions</h4>
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#kaggle
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#kaggle
 </code></pre></div>  </div>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 </code></pre></div></div>
 :ET

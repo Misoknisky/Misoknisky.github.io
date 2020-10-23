@@ -1,4 +1,4 @@
-I"su<ul id="markdown-toc">
+I"v<ul id="markdown-toc">
   <li><a href="#tensorflow-梯度计算" id="markdown-toc-tensorflow-梯度计算">Tensorflow 梯度计算</a></li>
   <li><a href="#compute_gradients" id="markdown-toc-compute_gradients">compute_gradients()</a></li>
   <li><a href="#结果" id="markdown-toc-结果">结果</a></li>
@@ -9,7 +9,7 @@
 <p>梯度函数minimize实际上调用了两个函数compute_gradients、apply_gradients，前者负责计算梯度，后者负责进行梯度更新，为了开发者可以对梯度进行一定的操作（比如裁剪）tensorflow提供了minimize函数的同时也提供了compute_gradients、apply_gradients函数，方便我们灵活使用。
  以下是minimize 函数的源码说明，供参考</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def minimize(self, loss, global_step=None, var_list=None,
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def minimize(self, loss, global_step=None, var_list=None,
                gate_gradients=GATE_OP, aggregation_method=None,
                colocate_gradients_with_ops=False, name=None,
                grad_loss=None):
@@ -48,7 +48,7 @@
 
 <p>一下是compute_gradients函数的源码说明，供参考</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def compute_gradients(self, loss, var_list=None,
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def compute_gradients(self, loss, var_list=None,
                         gate_gradients=GATE_OP,
                         aggregation_method=None,
                         colocate_gradients_with_ops=False,
@@ -82,7 +82,7 @@
 </code></pre></div></div>
 <p>可以发现compute_gradients函数返回的是梯度对[(gradient1, variable1),(gradient2, variable2),…]，gradient 表示的梯度值，variable表示的是变量，也就是该变量variable的梯度是gradient。除此之外梯度可能出现没有梯度的情况即梯度为 None，实际情况下在模型中计算出来的梯度是什么样子的呢，以下给出一个样例(gradient, variable)：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IndexedSlices(indices=Tensor("model/gradients/concat_1:0", shape=(?,), dtype=int32, device=/device:GPU:3), values=Tensor("model/gradients/concat:0", shape=(?, 300), dtype=float32, device=/device:GPU:3), dense_shape=Tensor("model/gradients/model/word_embedding/embedding_lookup_grad/ToInt32:0", shape=(2,), dtype=int32, device=/device:CPU:0)) &lt;tf.Variable 'model/word_embedding/word_embeddings:0' shape=(45438, 300) dtype=float32_ref&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IndexedSlices(indices=Tensor("model/gradients/concat_1:0", shape=(?,), dtype=int32, device=/device:GPU:3), values=Tensor("model/gradients/concat:0", shape=(?, 300), dtype=float32, device=/device:GPU:3), dense_shape=Tensor("model/gradients/model/word_embedding/embedding_lookup_grad/ToInt32:0", shape=(2,), dtype=int32, device=/device:CPU:0)) &lt;tf.Variable 'model/word_embedding/word_embeddings:0' shape=(45438, 300) dtype=float32_ref&gt;
 Tensor("model/gradients/model/passage_encoding/bidirectional_rnn/fw/fw/while/lstm_cell/MatMul/Enter_grad/b_acc_3:0", shape=(450, 600), dtype=float32, device=/device:GPU:3) &lt;tf.Variable 'model/passage_encoding/bidirectional_rnn/fw/lstm_cell/kernel:0' shape=(450, 600) dtype=float32_ref&gt;
 Tensor("model/gradients/model/passage_encoding/bidirectional_rnn/fw/fw/while/lstm_cell/BiasAdd/Enter_grad/b_acc_3:0", shape=(600,), dtype=float32, device=/device:GPU:3) &lt;tf.Variable 'model/passage_encoding/bidirectional_rnn/fw/lstm_cell/bias:0' shape=(600,) dtype=float32_ref&gt;
 Tensor("model/gradients/model/passage_encoding/bidirectional_rnn/bw/bw/while/lstm_cell/MatMul/Enter_grad/b_acc_3:0", shape=(450, 600), dtype=float32, device=/device:GPU:3) &lt;tf.Variable 'model/passage_encoding/bidirectional_rnn/bw/lstm_cell/kernel:0' shape=(450, 600) dtype=float32_ref&gt;
@@ -126,13 +126,13 @@ Tensor("model/gradients/model/pn_decoder/fw/while/PointerNetLSTMCell/fully_conne
 
 <p>可以发现gradient多数情况下是一个Tensor,除了Tensor外还有一个IndexedSlices类型；variable总是一个tf.Variable类型；正常情况下计算一个batch的梯度更新一次，现在我们不想马上更新梯度，希望累积到一定步数更新一次；正常的思路就是将所有累积的梯度使用一个变量进行保存，然后更新，这里就需要将梯度计算和更新分开来做。 tensorflow在2.0之前是静态图，静态图将累积的梯度回传的方式就是通过feed机制，因此我们需要的梯度储存器是一个placeholder占位符如何创建？variable表死的是计算图的节点，当图确定后计算图的节点是不变的，它表示的是节点的名称，我们之要将累计的梯度值和节点一一对应上即可，所以对Variable 不需要累积，只需要把梯度值进行累计即可；对于tensor类型的gradient：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grads_holede=[]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grads_holede=[]
 grads_holede.append((tf.placeholder(dtype=g.dtype, shape=g.get_shape()), v))
 </code></pre></div></div>
 <p>按以上方式创建梯度接收器，梯度的形式必须和原来保持一致，因此这里封装的是(gradient,Variable) 的元组。之后只需将求得的梯度累积求和feed给梯度接收器进行更新即可。</p>
 
 <p>对于gradient为IndexedSlices类型比较麻烦一些，IndexedSlices类型是一个稀疏矩阵，是因为查embedding表操作产生的，可以看出所有的梯度中只维护了一个IndexedSlices类型，而实际上程序中有两个查表操作（我的程序是这么写的），研究发现这个IndexedSlices变量拼接了所有产生的稀疏矩阵；IndexedSlices 有三个值indices、values、dense_shape，其中indices表示需要更新的embedding表对应的行，values和indices一一对应代表查表获取的相应的embedding 表示，dense_shape表示的是整个embedding表的大小，和IndexedSlices对应的Variable就是embedding节点名称。可以发现IndexedSlices 里的indices、values、dense_shape都是tensor因此都需要创建对应的接受器，然后再封装成IndexedSlices，将封装后的IndexedSlices作为gradient与对应的Variable一起构成梯度元组。具体的如下：</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IndexedSlices_index = tf.placeholder(dtype=tf.int32,shape=g.indices.shape)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IndexedSlices_index = tf.placeholder(dtype=tf.int32,shape=g.indices.shape)
 IndexedSlices_value = tf.placeholder(dtype=g.values.dtype,shape=g.values.shape)
 IndexedSlices_Dense_shape = tf.placeholder(dtype=g.dense_shape.dtype, shape=g.dense_shape.shape)
 grade_IndexedSlices=tf.IndexedSlices(self.IndexedSlices_value,
@@ -143,7 +143,7 @@ grads_holder.append((grade_IndexedSlices,v))
 
 <p>完整代码如下所示(AccumulateSteps类定义)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class AccumulateSteps(object):
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class AccumulateSteps(object):
     def __init__(self,grads_vars,accumulate_step=2):
         """
             grads_vars:[(g1,v1),(g2,v2)]
@@ -212,7 +212,7 @@ grads_holder.append((grade_IndexedSlices,v))
 
 <p>average_gradients函数定义如下  ，多个GPU并行后收集每个device的梯度进行平均，这里采用的是数据并行，每个device共享一个计算图，具体可查看main函数</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def _deduplicate_indexed_slices(values, indices):
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def _deduplicate_indexed_slices(values, indices):
     """Sums `values` associated with any non-unique `indices`.
     Args:
       values: A `Tensor` with rank &gt;= 1.
@@ -283,7 +283,7 @@ def average_gradients(tower_grads):
 
 <p>对应的main.py函数</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>logger = logging.getLogger("brc")
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>logger = logging.getLogger("brc")
 logger.info('Load data_set and vocab...')
 with open(os.path.join(args.vocab_dir, 'vocab.data'), 'rb') as fin:
      vocab = pickle.load(fin)

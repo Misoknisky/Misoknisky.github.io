@@ -1,6 +1,9 @@
-I"<ul id="markdown-toc">
+I"<<ul id="markdown-toc">
   <li><a href="#关于我" id="markdown-toc-关于我">关于我</a></li>
-  <li><a href="#联系我" id="markdown-toc-联系我">联系我</a></li>
+  <li><a href="#联系我" id="markdown-toc-联系我">联系我</a>    <ul>
+      <li><a href="#参加比赛" id="markdown-toc-参加比赛">参加比赛：</a></li>
+    </ul>
+  </li>
   <li><a href="#comments" id="markdown-toc-comments">Comments</a></li>
 </ul>
 
@@ -10,17 +13,28 @@
 
 <p>*研究领域：自然语言处理</p>
 
-<p>*研究方向：机器阅读理解</p>
+<p>*研究方向：机器阅读理解 对话系统</p>
 
 <h2 id="联系我">联系我</h2>
 
 <ul>
   <li>GitHub：<a href="https://github.com/Misoknisky">Misoknisky</a></li>
-  <li>email：misoknisky@163.com</li>
-  <li>qq: 1113471782@qq.com</li>
+  <li>email：misonsky@163.com</li>
+  <li>qq: 1113471782</li>
   <li><a href="https://weibo.com/u/5513447608">Weibo</a></li>
   <li><a href="https://www.zhihu.com/people/kangkangliu/">知乎</a></li>
 </ul>
+
+<h3 id="参加比赛">参加比赛：</h3>
+<blockquote>
+  <p>2018.05 百度机器阅读理解竞赛 第三<br />
+2018.07 CCKS2018 问句匹配任务 第一<br />
+2019.06  Triviaqa 阅读理解 第一名<br />
+2019.09 Squad1.0 第三 Squad2.0（十二名）<br />
+2019.12 百度机器阅读理解模型改进  第三<br />
+2020.05 百度机器阅读理解竞赛 第三<br />
+2020.07 MuTual and $\text{MuTual}^{plus}$  第一</p>
+</blockquote>
 
 <h2 id="comments">Comments</h2>
 
