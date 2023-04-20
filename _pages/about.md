@@ -52,7 +52,8 @@ redirect_from:
   * [2018.05] 2018 NLP Challenge on Machine Reading Comprehension. No.3 (Team Leader)  
   
   
-  ## Thesis Supervision  
+## Thesis Supervision  
+
   * Zheng Hua: *A Unified Multi-Domain Framework for Low-Resource Dialogue Generation.* SS 2023. (Msc. Thesis)  
 
 
