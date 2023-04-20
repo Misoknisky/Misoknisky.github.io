@@ -50,6 +50,8 @@ redirect_from:
   * [2019.06]  Competition on Machine Reading Comprehension of TriviaQA. No.1 (Individual Participation)  
   * [2018.07] Question Matching Competition of Webank Intelligent Customer Service. No.1 (Team)  
   * [2018.05] 2018 NLP Challenge on Machine Reading Comprehension. No.3 (Team Leader)  
+  
+  
   ## Thesis Supervision  
   * Zheng Hua: *A Unified Multi-Domain Framework for Low-Resource Dialogue Generation.* SS 2023. (Msc. Thesis)  
 
