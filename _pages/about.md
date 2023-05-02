@@ -23,7 +23,7 @@ redirect_from:
   * Dialogue system
 
 ## Publications
-  * **Yongkang Liu**, Shi Feng, Daling Wang, Hinrich Schütze, Yifei Zhang. Cross-Lingual PVGRU: Generating Diverse and Relevant Dialogue Responses via Pseudo-Variational Mechanism. ACL2023. [[paper](https://arxiv.org/abs/2212.09086)]
+  * **Yongkang Liu**, Shi Feng, Daling Wang, Hinrich Schütze, Yifei Zhang. PVGRU: Generating Diverse and Relevant Dialogue Responses via Pseudo-Variational Mechanism. ACL2023. [[paper](https://arxiv.org/abs/2212.09086)]
 
  * Feiliang Ren, **Yongkang Liu**, Bochao Li, Shilei Liu, Bingchao Wang, Jiaqi Wang, Chunchao Liu, Qi Ma. An Understanding-Oriented Robust Machine Reading Comprehension Model *ACM TALLIP.* 2022.[[paper](https://arxiv.org/abs/2207.00187)]  
 
