@@ -24,7 +24,7 @@ redirect_from:
 
 ## Publications
  
- * **Yongkang Liu**, Shi Feng, Daling Wang, Yifei Zhang and Hinrich Schütze. PVGRU: Generating Diverse and Relevant Dialogue Responses via Pseudo-Variational Mechanism. arxiv. [[paper](https://arxiv.org/pdf/2305.14658.pdf)]
+ * **Yongkang Liu**, Shi Feng, Daling Wang, Yifei Zhang and Hinrich Schütze. Evaluate What You Can't Evaluate: Unassessable Generated Responses Quality. arxiv. [[paper](https://arxiv.org/pdf/2305.14658.pdf)]
 
  * **Yongkang Liu**, Shi Feng, Daling Wang, Yifei Zhang and Hinrich Schütze. PVGRU: Generating Diverse and Relevant Dialogue Responses via Pseudo-Variational Mechanism. ACL2023. [[paper](https://arxiv.org/abs/2212.09086)]
 
