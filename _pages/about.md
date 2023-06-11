@@ -11,7 +11,7 @@ redirect_from:
 ** **
 
 * Hi, I am yongkang, a PhD candidate at [NEU](http://english.neu.edu.cn/)  
-* Currently, I am in my first year studying in the fields of computational linguistics / natural language processing at [Center for Information and Language Processing](https://www.cis.lmu.de/) (CIS), directed by [Prof. Hinrich Schütze](https://schuetze.cis.lmu.de/about/). I am supervised by [Prof. Hinrich Schütze](https://schuetze.cis.lmu.de/about/). I am also an associated member of Munich Center for Machine Learning ([MCML](https://mcml.ai/)).
+* Currently, I am in my first year studying in the fields of computational linguistics / natural language processing at [Center for Information and Language Processing](https://www.cis.lmu.de/) (CIS), co-directed by [Prof. Hinrich Schütze](https://schuetze.cis.lmu.de/about/) and [Prof. Barbara Plank](https://bplank.github.io/). I am supervised by [Prof. Hinrich Schütze](https://schuetze.cis.lmu.de/about/). I am also an associated member of Munich Center for Machine Learning ([MCML](https://mcml.ai/)).
 * I obtained my M.Sc. degree in computational linguistics and informatics at 
 [NEU](http://english.neu.edu.cn/).
 
